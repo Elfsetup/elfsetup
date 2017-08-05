@@ -109,7 +109,7 @@ sub UI
 	# create the window
 	$window = Gtk2::Window->new('toplevel');
 	$window->signal_connect(delete_event => \&delete_event);
-	$window->set_title("Installer");
+	$window->set_title("Nixsetup");
 	$window->set_border_width(5);
 	# $window->resize(480, 360);
 	$window->set_resizable(FALSE);
@@ -181,14 +181,6 @@ sub UI
 
 # Events Handlers
 
-sub callback
-{
-	my ($button, $data) = @_;
-	print "Hello again - $data was pressed\n";
-}
-
-
-
 sub delete_event
 {
 	Gtk2->main_quit;
@@ -199,8 +191,10 @@ sub delete_event
 
 sub check_launch_event
 {
-	&uninstaller();
+	#&uninstaller();
 }
+
+
 
 
 
@@ -292,7 +286,7 @@ if(-e "$home/bin/$launcher_exec") {
 
 my \$message = "The Application has been Uninstalled!.";
 my \$dialog = Gtk2::MessageDialog->new(undef, 'modal', 'info', 'ok', \$message);
-\$dialog->set_title("Installer");
+\$dialog->set_title("Nixsetup");
 \$dialog->run;
 \$dialog->destroy;
 Gtk2->main_quit;
@@ -369,7 +363,7 @@ sub root_unavailable
 {
 	my $message = "Must start the application with root privileges. Open a command and exec: sudo ./setup.sh";
 	my $dialog = Gtk2::MessageDialog->new(undef, 'modal', 'warning', 'ok', $message);
-	$dialog->set_title("Installer");
+	$dialog->set_title("Nixsetup");
 	$dialog->run;
 	$dialog->destroy;
 }
@@ -381,7 +375,7 @@ sub install_successful
 	my $home = $ENV{'HOME'};
 	my $message = "$setup_application was installed successful, for Uninstall, Right click on Launcher Icon in Applications.";
 	my $dialog = Gtk2::MessageDialog->new($window, 'modal', 'info', 'ok', $message);
-	$dialog->set_title("Installer");
+	$dialog->set_title("Nixsetup");
 	$dialog->run;
 	$dialog->destroy;
 }
