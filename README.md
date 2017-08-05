@@ -5,7 +5,7 @@ Linstaller
 A Simple Fast Standalone Installer for Elementary OS.
 -----------------------------------------------------
 
-Linstaller can create a standalone distribution file
+Nixsetup can create a standalone distribution file
 for Elementary OS for all binary executables and your
 config and database files.
 
@@ -41,6 +41,23 @@ Original Folder has the following.
 - README.md         [this file]
 
 
+Personalize your installer in 3 simple steps
+-----------------------------------------------
+1) Put all binaries to be installed in the host system
+in "content" folder. That include executables and folder for the executable
+or config files and/or databases file used by executable.
+
+2) open with your favorite text editor "payload/setup.pl", and fill
+the REQUIRED variables with your application information.
+
+3) open a command line at root of the project and execute:
+$ ./builder
+
+You will get a "setup.sh", it is the self extractor installer.
+Feel free to rename with your setup name of preference
+(Ex: setup.sh => MyApp-v1.0)
+
+Take care of the use of SPACES in some places for avoid errors.
 
 
 
