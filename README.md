@@ -35,15 +35,18 @@ Create a Installer for Elementary OS Applications in 3 steps.
 Download or make a copy from original folder.
 
 Original Folder has the following.
-- (dir) content     [Here go the executable and content to be installed]
-- (dir) payload     [the installer itself that will be in /tmp at setup time]
-- builder           [the compiler for the install]
-- decompresser      [a script for decompress the distribution]
-- license.txt           [license]
-- MyApp-v1.0        [a demo for didactical purposes]
-- README.md         [this file]
+
+|			|               |
+| ---------------------	|:-------------:|
+| (dir) content      	| Here go the executable and content to be installed |
+| (dir) payload     	| the installer itself that will be in /tmp at setup time |
+| builder	 	| the compiler for the install |
+| decompresser		| a script for decompress the distribution] |
+| MyApp-v1.0		| a demo for didactical purposes |
+| README.md		| This file |
 
 
+|
 Personalize your installer in 3 simple steps
 -----------------------------------------------
 1) Put all binaries to be installed in the host system
@@ -57,7 +60,7 @@ the REQUIRED variables with your application information.
 `$ ./builder`
 
 You will get a "setup.sh", it is the self extractor installer.
-Feel free to rename with your setup name of preference
+Feel free to rename with your setup name of preference.
 (Ex: `$ mv ./setup.sh ./MyApp-v1.0`)
 
 Take care of the use of SPACES in some places for avoid errors.
