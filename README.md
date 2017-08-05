@@ -1,6 +1,6 @@
 
 
-![picture alt](http://a.fsdn.com/con/app/proj/nixsetup/screenshots/screenshot-nixsetup.png/1 "Nixsetup
+![picture alt](http://a.fsdn.com/con/app/proj/nixsetup/screenshots/screenshot-nixsetup.png "Nixsetup
 
 Nixsetup
 =================================
