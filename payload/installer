@@ -1,0 +1,17 @@
+#!/bin/bash
+
+echo "Running Installer"
+
+# Check Superuser
+#mkdir /opt/f3nf3b83g83y87sgfaef78af
+#if [ -e "/opt/f3nf3b83g83y87sgfaef78af" ]; then
+#	./setup.pl
+#else
+#	./warning.pl
+#fi
+
+./setup.pl
+
+
+# tar -xf ./content.tar -C /opt/Helloworld
+
