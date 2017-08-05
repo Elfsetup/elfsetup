@@ -36,7 +36,7 @@ Original Folder has the following.
 - (dir) payload     [the installer itself that will be in /tmp at setup time]
 - builder           [the compiler for the install]
 - decompresser      [a script for decompress the distribution]
-- gpl.txt           [license]
+- license.txt           [license]
 - MyApp-v1.0        [a demo for didactical purposes]
 - README.md         [this file]
 
