@@ -28,6 +28,17 @@ set
 `$ chmod +x ./MyApp-v1.0`
 and run.
 
+git clone https://github.com/Nixsetup/nixsetup.git
+
+or download a tarball from http://nixsetup.sourceforge.net/
+
+
+
+How uninstall??
+----------------
+As simple as, right click on launcher icon in "Applications" freedesktop menu or Wingpanel icon.
+And select Uninstall MyApp-v1.0.
+
 
 Create a Installer for Elementary OS Applications in 3 steps.
 ---------------------------------------------------------------
@@ -36,7 +47,7 @@ Download or make a copy from original folder.
 
 Original Folder has the following.
 
-|			|               |
+| File or Folder	| Content |
 | ---------------------	|:-------------:|
 | (dir) content      	| Here go the executable and content to be installed |
 | (dir) payload     	| the installer itself that will be in /tmp at setup time |
@@ -46,24 +57,52 @@ Original Folder has the following.
 | README.md		| This file |
 
 
-|
+
 Personalize your installer in 3 simple steps
 -----------------------------------------------
 1) Put all binaries to be installed in the host system
 in "content" folder. That include executables and folder for the executable
 or config files and/or databases file used by executable.
+Make sure to include a PNG or SVG file as Application Icon. (see Step 2)
 
 2) open with your favorite text editor "payload/setup.pl", and fill
 the REQUIRED variables with your application information.
+Make sure to include a PNG or SVG file as Application Icon in "content" folder.
 
 3) open a command line at root of the project and execute:
 `$ ./builder`
 
 You will get a "setup.sh", it is the self extractor installer.
 Feel free to rename with your setup name of preference.
+
 (Ex: `$ mv ./setup.sh ./MyApp-v1.0`)
 
 Take care of the use of SPACES in some places for avoid errors.
+
+
+More In-depth
+-----------------------------------------------------
+
+The files and folder in "content" directory are compressed
+in the content.tar inside payload directory.
+"payload" is the folder which be compressed at build time.
+and joined with a special script in order to decompress
+the "payload" content (payload.tar.gz) into /tmp, in the system host.
+
+Once time the setup.sh selfextract script was created.
+you can delete the payload.tar.gz, it is not used anymore.
+"builder" do not delete it for debugger purposes.
+
+the GUI application installer is the "payload/setup.pl"
+these contain a first configuration file session, and
+after, a Perl/Gtk2 applications. It can run without
+any dependencies in Elementary OS.
+
+"Payload" directory include a installer-128.svg, it is
+a icon 128 x 128 pixels for installer when is running.
+Also, installer-300x200.png is a presentation graphic
+for the installer, you can preserve the size
+and can be customized to your need.
 
 
 
