@@ -21,7 +21,7 @@ A Static Executable and all files needed by Executable.
 At glance, try a test!:
 ---------------------------
 Download the demo installer MyApp-v1.0
-set 
+set
 $ chmod +x ./MyApp-v1.0
 and run.
 
@@ -46,6 +46,11 @@ Original Folder has the following.
 
 
 
+
+
+Setup of github at local directory
+=========================================
+
 git init
 git add *
 git commit -m "first commit"
@@ -53,4 +58,8 @@ git remote add origin https://github.com/Nixsetup/nixsetup.git
 git push -u origin master
 
 
+
+
+(c) 2017 Marcelo G. Nuñez. <marcelognunez@gmail.com>. GNU General Public License v2.0
+See license.txt at root directory
 
