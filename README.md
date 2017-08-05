@@ -1,5 +1,5 @@
 
-Linstaller
+Nixsetup
 =================================
 
 A Simple Fast Standalone Installer for Elementary OS.
