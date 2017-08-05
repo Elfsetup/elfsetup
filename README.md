@@ -13,16 +13,16 @@ At moment, executable with dependecies other that build-in
 in Elementary OS are not available.
 
 But you can install all executable and your files with:
-A Vala Executable (based in Gobject, Glib, Gtk2 or Gtk3, Gstreamer, etc)
-A AppImage Executable (Simplify the Install and Uninstall Process if you like installed)
-A Static Executable and all files needed by Executable.
+- A Vala Executable (based in Gobject, Glib, Gtk2 or Gtk3, Gstreamer, etc).
+- A AppImage Executable (Simplify the Install and Uninstall Process if you like installed).
+- A Static Executable and all files needed by Executable.
 
 
 At glance, try a test!:
 ---------------------------
 Download the demo installer MyApp-v1.0
 set
-$ chmod +x ./MyApp-v1.0
+`$ chmod +x ./MyApp-v1.0`
 and run.
 
 
@@ -51,11 +51,11 @@ or config files and/or databases file used by executable.
 the REQUIRED variables with your application information.
 
 3) open a command line at root of the project and execute:
-$ ./builder
+`$ ./builder`
 
 You will get a "setup.sh", it is the self extractor installer.
 Feel free to rename with your setup name of preference
-(Ex: setup.sh => MyApp-v1.0)
+(Ex: `$ mv ./setup.sh ./MyApp-v1.0`)
 
 Take care of the use of SPACES in some places for avoid errors.
 
@@ -73,6 +73,7 @@ git add *
 git commit -m "first commit"
 git remote add origin https://github.com/Nixsetup/nixsetup.git
 git push -u origin master
+
 
 
 
