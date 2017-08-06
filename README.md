@@ -125,10 +125,10 @@ If you are a developer, and want personalize more,
 you can run "payload/setup.pl" from commmandline
 and will get print's with debugger information.
 
-This describe in a graphical mood:
-setup.sh = decompresser + payload.tar.gz
-payload.tar.gz = "payload" folder (installer + content)
-content = exec and config files.
+This describe in a graphical mood:  
+setup.sh = decompresser + payload.tar.gz  
+payload.tar.gz = "payload" folder (installer + content)  
+content = exec and config files.  
 
 
 
