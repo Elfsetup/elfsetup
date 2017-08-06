@@ -31,6 +31,9 @@ and run.
 Nixsetup installs in a MacOS X manner.
 $HOME/Applications/
 
+Commandline scope become ready in:
+$HOME/bin via hard link.
+
 You can install anywhere which have read-write-exec permissions..
 At moment, others root folders (as /opt)
 are not supported.
