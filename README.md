@@ -19,6 +19,8 @@ But you can install all executable and your files with:
 - A Vala Executable (based in Gobject, Glib, Gtk2 or Gtk3, Gstreamer, etc).
 - A AppImage Executable (Simplify the Install and Uninstall Process if you like installed).
 - A Static Executable and all files needed by Executable.
+- A Perl/Gtk2 Application.
+- Etc.
 
 
 At glance, try a test!:
@@ -132,6 +134,8 @@ Setup of github at local directory
 ------------------------------------
 If you want develop from git here the cookbook:
 
+|Git     |
+|:-------|
 |git init|
 |git add *|
 |git commit -m "first commit"|
