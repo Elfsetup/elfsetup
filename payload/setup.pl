@@ -1,7 +1,7 @@
 #!/usr/bin/perl -w
 
 ############################################################
-# Setup - A Graphical Installer for Elementary OS
+# Nixsetup - A Graphical Installer for Elementary OS
 # (c) 2017 Marcelo G. Nuñez. marcelognunez@gmail.com
 # GNU GENERAL PUBLIC LICENSE v2.0
 ############################################################

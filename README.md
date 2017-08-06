@@ -28,10 +28,12 @@ set
 `$ chmod +x ./MyApp-v1.0`
 and run.
 
-git clone https://github.com/Nixsetup/nixsetup.git
+Nixsetup installs in a MacOS X manner.
+$HOME/Applications/
 
-or download a tarball from http://nixsetup.sourceforge.net/
-
+You can install anywhere which have read-write-exec permissions..
+At moment, others root folders (as /opt)
+are not supported.
 
 
 How uninstall??
@@ -44,6 +46,9 @@ Create a Installer for Elementary OS Applications in 3 steps.
 ---------------------------------------------------------------
 
 Download or make a copy from original folder.
+
+git clone https://github.com/Nixsetup/nixsetup.git
+or download a tarball from http://nixsetup.sourceforge.net/
 
 Original Folder has the following.
 
@@ -104,20 +109,31 @@ Also, installer-300x200.png is a presentation graphic
 for the installer, you can preserve the size
 and can be customized to your need.
 
+"payload/setup.pl" create, in runtime, a "uninstaller.pl"
+GtkPerl script in destination folder for Uninstall
+purposes. This script is called in the generated *.desktop
+file created for icon and launcher in "Applications".
 
+If you are a developer, and want personalize more,
+you can run "payload/setup.pl" from commmandline
+and will get print's with debugger information.
 
-
+This describe in a graphical mood:
+setup.sh = decompresser + payload.tar.gz
+payload.tar.gz = "payload" folder (installer + content)
+content = exec and config files.
 
 
 
 Setup of github at local directory
-=========================================
+------------------------------------
+If you want develop from git here the cookbook:
 
-git init
-git add *
-git commit -m "first commit"
-git remote add origin https://github.com/Nixsetup/nixsetup.git
-git push -u origin master
+|git init|
+|git add *|
+|git commit -m "first commit"|
+|git remote add origin https://github.com/Nixsetup/nixsetup.git|
+|git push -u origin master|
 
 
 
