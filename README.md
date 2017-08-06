@@ -52,7 +52,7 @@ And select Uninstall MyApp-v1.0.
 
 Examples?
 ----------
-Look at https://github.com/Nixsetup/nixsetup-examples
+Look at https://sourceforge.net/projects/nixsetup/files/examples/
 for examples with source code.
 Nixsetup can install Java and Qt4 applications without dependencies headaches.
 
