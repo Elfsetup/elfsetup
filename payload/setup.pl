@@ -18,21 +18,22 @@ use Gtk2 '-init';
 
 # (REQUIRED) Name of the Application to Install
 # The name which be showed in the Setup Install.
-# WARNING: CANNOT CONTAINS SPACES!.
-my $setup_application = "MyApp-v1.0";
+my $setup_application = "MyApp v1.0";
 
 
-# Destination Directory. Where all content will be installed.
+# (REQUIRED) Destination Directory. Where all content will be installed.
 # By default, destdir is $HOME/Applications
 # At moment, root install is not supported.
 # Option as user ($HOME/Applications/MyApp-v1.0)
-my $setup_destdir = $ENV{'HOME'} . "/Applications/" . $setup_application;
+# WARNING: CANNOT CONTAINS SPACES!.
+my $setup_destdir = $ENV{'HOME'} . "/Applications/MyApp-v1.0";
 
 
 # Setup Image
 # An image is shown as presentation in Setup.
 # Put that image in payload folder, see the build-in example.
 # image is 300x200 pixels in PNG format.
+# WARNING: CANNOT CONTAINS SPACES!.
 my $setup_image = "installer-300x200.png";
 
 
@@ -52,12 +53,16 @@ my $bin_install = TRUE;
 # this application can be a Vala app (based in eOS build-in libs), a static app or an AppImage app.
 # applications with deps are in development.
 # AppImage is a self contained applications (no external libs) for Linux and others systems.
+# WARNING: CANNOT CONTAINS SPACES!.
 my $launcher_exec = "myapp";
+
+# The application arguments at start if required.
+my $launcher_args = "";
 
 
 # (REQUIRED) Icon for "Applications" menu launcher (part of myapp.desktop)
 # Put the Application icon into content, and write here
-# the name of the icon. Icon are preffered SVG and PNG of 64px or more.
+# the name of the icon. Icon are preffered SVG and PNG of 48px or more.
 # WARNING: CANNOT CONTAINS SPACES!.
 my $launcher_icon = "myapp.svg";
 
@@ -371,7 +376,7 @@ sub desktop_file
 {
 	my $location = $entry_location->get_text();
 
-	my $exec = "$location/$launcher_exec";
+	my $exec = "$location/$launcher_exec $launcher_args";
 
 	if($exec =~ /\.jar/) {
 		$exec = "java -jar " . $exec;
