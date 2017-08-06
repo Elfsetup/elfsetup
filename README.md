@@ -133,8 +133,10 @@ If you are a developer, and want personalize more,
 you can run "payload/setup.pl" from commmandline
 and will get print's with debugger information.
 
-More info on Gtk2/Perl
-http://gtk2-perl.sourceforge.net/doc/pod/index.html
+More info on Gtk2/Perl:  
+http://gtk2-perl.sourceforge.net/doc/gtk2-perl-tut/index.html  
+http://gtk2-perl.sourceforge.net/doc/pod/index.html  
+
 
 This describe in a graphical mood:
 setup.sh = decompresser + payload.tar.gz  
