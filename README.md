@@ -26,6 +26,10 @@ Nixsetup can install packs. Packs are severals libraries downloaded from aptitud
 in runtime that conform applications libraries dependencies.
 (see "payload/setup.pl" for configuration)
 
+- A Qt 4 Application. 
+- A Java Jar Application. 
+- An Executable with Libraries in Aptitude Repositories. 
+
 
 At glance, try a test!:
 ---------------------------
