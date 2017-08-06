@@ -12,10 +12,8 @@ Nixsetup can create a standalone distribution file
 for Elementary OS for all binary executables and your
 config and database files.
 
-At moment, executable with dependecies other that build-in
-in Elementary OS are not available.
-
-But you can install all executable and your files with:
+If not dependencies are required, you can install without a Internet connection.
+Here a list of applications without aptitude requirement:
 - A Vala Executable (based in Gobject, Glib, Gtk2 or Gtk3, Gstreamer, etc).
 - A AppImage Executable (Simplify the Install and Uninstall Process if you like installed).
 - A Static Executable and all files needed by Executable.
@@ -23,6 +21,10 @@ But you can install all executable and your files with:
 - A Perl/Gtk2 Application.
 - A PyGTK Application.
 - Etc.
+
+Nixsetup can install packs. Packs are severals libraries downloaded from aptitude
+in runtime that conform applications libraries dependencies.
+(see "payload/setup.pl" for configuration)
 
 
 At glance, try a test!:
@@ -125,7 +127,10 @@ If you are a developer, and want personalize more,
 you can run "payload/setup.pl" from commmandline
 and will get print's with debugger information.
 
-This describe in a graphical mood:  
+More info on Gtk2/Perl
+http://gtk2-perl.sourceforge.net/doc/pod/index.html
+
+This describe in a graphical mood:
 setup.sh = decompresser + payload.tar.gz  
 payload.tar.gz = "payload" folder (installer + content)  
 content = exec and config files.  

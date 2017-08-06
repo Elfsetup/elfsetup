@@ -53,7 +53,7 @@ my $launcher_exec = "myapp";
 
 # (REQUIRED) Icon for "Applications" menu launcher (part of myapp.desktop)
 # Put the Application icon into content, and write here
-# the name of the icon. Icon are preffered SVG and PNG upper 32px
+# the name of the icon. Icon are preffered SVG and PNG of 64px or more.
 # WARNING: CANNOT CONTAINS SPACES!.
 my $launcher_icon = "myapp.svg";
 
@@ -68,6 +68,24 @@ my $launcher_categories = "Education;Programming;";
 
 # System keywords (part of myapp.desktop)
 my $launcher_keywords = "$setup_application;education;programming;";
+
+
+# Dependency Pack (These libraries will not be removed with Uninstall.)
+# Install a pack of dependencies with aptitude
+# value can be one of this:
+# "none"	nothing is installed.
+# "qt4"		install: libqt4-dev libprotobuf-dev protobuf-compiler qt4-qmlviewer
+# "java"	install: default-jre
+my $setup_pack = "none";
+
+
+# Library Dependencies (These libraries will not be removed with Uninstall.)
+# Install custom dependencies from aptitude Ubuntu depositories.
+# For example for x86 libraries in a x64 system.
+# ex: my $setup_deps = "libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1 libbz2-1.0:i386";
+# If you know perl and Tk, you can use Perl-Tk module, it is not buildin by default in eOS.
+# ex: my $setup_deps = "perl-tk";
+my $setup_deps = "";
 
 
 
@@ -94,10 +112,12 @@ my $launcher_keywords = "$setup_application;education;programming;";
 Gtk2->main;
 
 my $window;
+my $event_box;
 my $image;
 my $lbl_location;
 my $entry_location;
 my $check_launch;
+my $check_bin;
 my $btn_install;
 
 
@@ -123,6 +143,10 @@ sub UI
 
 	$image = Gtk2::Image->new_from_file($setup_image);
 	$image->show;
+	$event_box = Gtk2::EventBox->new();
+	$event_box->signal_connect(button_press_event => \&clicked_image_event);
+	$event_box->add($image);
+	$event_box->show;
 
 	$lbl_location = Gtk2::Label->new("Install in the path:");
 	$lbl_location->set_justify('left');
@@ -133,10 +157,14 @@ sub UI
 	$entry_location->show;
 
 	# Launch Checkbutton
-	$check_launch = Gtk2::CheckButton->new("Install Launcher in Applications");
+	$check_launch = Gtk2::CheckButton->new("Install Launcher in Applications.");
 	$check_launch->set_active($launcher_install);
 	$check_launch->signal_connect(toggled => \&check_launch_event);
 	$check_launch->show;
+
+	$check_bin = Gtk2::CheckButton->new("Install a commandline scope. (\$HOME/bin)");
+	$check_bin->set_active(TRUE);
+	$check_bin->show;
 
 	# Control Buttons
 	$btn_install = Gtk2::Button->new("Install");
@@ -156,10 +184,11 @@ sub UI
 	# Pack all
 	my $vboxes = Gtk2::VBox->new(FALSE, 5);
 	$vboxes->add($label1);
-	$vboxes->add($image);
+	$vboxes->add($event_box);
 	$vboxes->add($lbl_location);
 	$vboxes->add($entry_location);
 	$vboxes->add($check_launch);
+	$vboxes->add($check_bin);
 	$vboxes->add($controls);
 	$vboxes->show;
 
@@ -195,6 +224,11 @@ sub check_launch_event
 }
 
 
+sub clicked_image_event
+{
+
+}
+
 
 
 
@@ -213,10 +247,6 @@ sub install
 		mkdir("$home/Applications", 0775);
 	}
 
-	unless(-e "$home/bin") {
-		mkdir("$home/bin", 0775);
-	}
-
 	# pkexec tar -xf ./content.tar -C $location
 	unless(-e $location) {
 		mkdir($location, 0775);
@@ -224,9 +254,27 @@ sub install
 		my $ret = system($program);
 	}
 
+
+	# Dependency Pack
+	if($setup_pack eq "qt4") {
+		system("pkexec apt-get install libqt4-dev libprotobuf-dev protobuf-compiler qt4-qmlviewer -y");
+	}
+
+	if($setup_pack eq "java") {
+		system("pkexec apt-get install default-jre -y");
+	}
+
+
+	# Standard Dependencies.
+	if($setup_deps ne "") {
+		system("pkexec apt-get install $setup_deps -y");
+	}
+
+
+
 	# Launcher must be installed?
 	if( $check_launch->get_active() ) {
-		print("Installing Applications Launcher...\n");
+		print("Installing Applications Launcher...\n\n");
 		&desktop_file();
 
 		#exec("xdg-desktop-menu install --novendor ./$launcher_exec.desktop");
@@ -237,11 +285,21 @@ sub install
 		# Icon in local
 		rename("$location/$launcher_icon", "$home/.local/share/icons/$launcher_icon");
 	}
-	
-	my $symlink_exists = eval { symlink("",""); 1 };
-	if($symlink_exists) {
-		my $k = link("$location/$launcher_exec", "$home/bin/$launcher_exec");
-		print("Result $k = $home/bin/$launcher_exec" . " <- " . "$location/$launcher_exec" . "\n");
+
+
+	# A Commandline scope
+	if( $check_bin->get_active() ) {
+		print("Installing Commandline scope...\n");
+
+		unless(-e "$home/bin") {
+			mkdir("$home/bin", 0775);
+		}
+
+		my $symlink_exists = eval { symlink("",""); 1 };
+		if($symlink_exists) {
+			my $k = link("$location/$launcher_exec", "$home/bin/$launcher_exec");
+			print("Result $k = $home/bin/$launcher_exec" . " <- " . "$location/$launcher_exec" . "\n\n");
+		}
 	}
 
 	# $btn_install->set_label("Uninstall");
