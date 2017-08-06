@@ -50,6 +50,12 @@ How uninstall??
 As simple as, right click on launcher icon in "Applications" freedesktop menu or Wingpanel icon.
 And select Uninstall MyApp-v1.0.
 
+Examples?
+----------
+Look at https://github.com/Nixsetup/nixsetup-examples
+for examples with source code.
+Nixsetup can install Java and Qt4 applications without dependencies headaches.
+
 
 Create a Installer for Elementary OS Applications in 3 steps.
 ---------------------------------------------------------------
