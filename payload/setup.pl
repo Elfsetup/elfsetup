@@ -43,6 +43,10 @@ my $setup_image = "installer-300x200.png";
 # when true, Setup has this option checked by default
 my $launcher_install = TRUE;
 
+# Install a Commandline scope by default.
+# if true, a hard link will be made in $HOME/bin
+my $bin_install = TRUE;
+
 
 # (REQUIRED) The application to start in Launcher (myapp.desktop will be created)
 # this application can be a Vala app (based in eOS build-in libs), a static app or an AppImage app.
@@ -163,7 +167,7 @@ sub UI
 	$check_launch->show;
 
 	$check_bin = Gtk2::CheckButton->new("Install a commandline scope. (\$HOME/bin)");
-	$check_bin->set_active(TRUE);
+	$check_bin->set_active($bin_install);
 	$check_bin->show;
 
 	# Control Buttons
@@ -367,13 +371,19 @@ sub desktop_file
 {
 	my $location = $entry_location->get_text();
 
+	my $exec = "$location/$launcher_exec";
+
+	if($exec =~ /\.jar/) {
+		$exec = "java -jar " . $exec;
+	}
+
 	my $desktop = <<DESKTOP;
 [Desktop Entry]
 Name=$setup_application
 GenericName=$setup_application
 Comment=$launcher_comments
 Categories=$launcher_categories
-Exec="$location/$launcher_exec"
+Exec=$exec
 Icon=$launcher_icon
 Terminal=false
 Type=Application
