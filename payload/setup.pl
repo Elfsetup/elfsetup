@@ -236,22 +236,22 @@ sub install
 
 		# Icon in local
 		rename("$location/$launcher_icon", "$home/.local/share/icons/$launcher_icon");
-
-		my $symlink_exists = eval { symlink("",""); 1 };
-		if($symlink_exists) {
-			my $k = link("$location/$launcher_exec", "$home/bin/$launcher_exec");
-			print("Result $k = $home/bin/$launcher_exec" . " <- " . "$location/$launcher_exec" . "\n");
-		}
-
-		# $btn_install->set_label("Uninstall");
-		&uninstaller();
-		rename("./uninstaller.pl", "$location/uninstaller.pl");
-
-
-		$window->hide_on_delete();
-		&install_successful();
-		&delete_event();
 	}
+	
+	my $symlink_exists = eval { symlink("",""); 1 };
+	if($symlink_exists) {
+		my $k = link("$location/$launcher_exec", "$home/bin/$launcher_exec");
+		print("Result $k = $home/bin/$launcher_exec" . " <- " . "$location/$launcher_exec" . "\n");
+	}
+
+	# $btn_install->set_label("Uninstall");
+	&uninstaller();
+	rename("./uninstaller.pl", "$location/uninstaller.pl");
+
+
+	$window->hide_on_delete();
+	&install_successful();
+	&delete_event();
 }
 
 
