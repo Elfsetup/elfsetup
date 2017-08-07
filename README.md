@@ -15,7 +15,6 @@ config and database files.
 If not dependencies are required, you can install without a Internet connection.
 Here a list of applications without aptitude requirement:
 - A Vala Executable (based in Gobject, Glib, Gtk2 or Gtk3, Gstreamer, etc).
-- A AppImage Executable (Simplify the Install and Uninstall Process if you like installed).
 - A Static Executable and all files needed by Executable.
 - A Tcl/Tk Application.
 - A Perl/Gtk2 Application.
