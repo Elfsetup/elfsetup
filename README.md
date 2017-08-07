@@ -1,14 +1,14 @@
 
 
-![picture alt](http://a.fsdn.com/con/app/proj/nixsetup/screenshots/screenshot-nixsetup.png "Nixsetup")
+![picture alt](http://a.fsdn.com/con/app/proj/elfsetup/screenshots/screenshot-elfsetup.png "Elfsetup")
 
-Nixsetup
+Elfsetup
 =================================
 
 A Simple Fast Standalone Installer for Elementary OS.
 -----------------------------------------------------
 
-Nixsetup can create a standalone distribution file
+Elfsetup can create a standalone distribution file
 for Elementary OS for all binary executables and your
 config and database files.
 
@@ -22,7 +22,7 @@ Here a list of applications without aptitude requirement:
 - A PyGTK Application.
 - Etc.
 
-Nixsetup can install packs. Packs are severals libraries downloaded from aptitude
+Elfsetup can install packs. Packs are severals libraries downloaded from aptitude
 in runtime that conform applications libraries dependencies.
 (see "payload/setup.pl" for configuration)
 
@@ -38,7 +38,7 @@ set
 `$ chmod +x ./MyApp-v1.0`
 and run.
 
-Nixsetup installs in a MacOS X manner.
+Elfsetup installs in a MacOS X manner.
 $HOME/Applications/
 
 Commandline scope become ready in:
@@ -56,9 +56,9 @@ And select Uninstall MyApp-v1.0.
 
 Examples?
 ----------
-Look at https://sourceforge.net/projects/nixsetup/files/examples/
+Look at https://sourceforge.net/projects/elfsetup/files/examples/
 for examples with source code.
-Nixsetup can install Java and Qt4 applications without dependencies headaches.
+Elfsetup can install Java and Qt4 applications without dependencies headaches.
 
 
 Create a Installer for Elementary OS Applications in 3 steps.
@@ -66,8 +66,8 @@ Create a Installer for Elementary OS Applications in 3 steps.
 
 Download or make a copy from original folder.
 
-git clone https://github.com/Nixsetup/nixsetup.git
-or download a tarball from http://nixsetup.sourceforge.net/
+git clone https://github.com/Elfsetup/elfsetup.git
+or download a tarball from http://elfsetup.sourceforge.io/
 
 Original Folder has the following.
 
@@ -142,7 +142,7 @@ http://gtk2-perl.sourceforge.net/doc/gtk2-perl-tut/index.html
 http://gtk2-perl.sourceforge.net/doc/pod/index.html  
 
 
-This describe in a graphical mood:
+This describe in a graphical mood:  
 setup.sh = decompresser + payload.tar.gz  
 payload.tar.gz = "payload" folder (installer + content)  
 content = exec and config files.  
@@ -158,7 +158,7 @@ If you want develop from git here the cookbook:
 |git init|
 |git add *|
 |git commit -m "first commit"|
-|git remote add origin https://github.com/Nixsetup/nixsetup.git|
+|git remote add origin https://github.com/Elfsetup/elfsetup.git|
 |git push -u origin master|
 
 
