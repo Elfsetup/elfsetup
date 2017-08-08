@@ -1,6 +1,6 @@
 
 
-![picture alt](http://a.fsdn.com/con/app/proj/elfsetup/screenshots/screenshot-elfsetup.png "Elfsetup")
+![picture alt](http://a.fsdn.com/con/app/proj/elfsetup/screenshots/elfsetup.png "Elfsetup")
 
 Elfsetup
 =================================
