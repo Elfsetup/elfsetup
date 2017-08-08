@@ -161,6 +161,9 @@ If you want develop from git here the cookbook:
 |git push -u origin master|
 
 
+Thank YOU!
+--------------
+
 Life in Argentine is very hard. I have not job now, if you
 send something, you are making the greatest work, your help is limitless.
 
