@@ -161,8 +161,16 @@ If you want develop from git here the cookbook:
 |git push -u origin master|
 
 
+Life in Argentine is very hard. I have not job now, if you
+send something, you are making the greatest work, your help is limitless.
 
+Paypal: marcelognunez@gmail.com   
+Bitcoin: 1GfCEAoedbHMkA5qrypZfAmGZ84QHG5fFM   
+Bitcoin Cash: 13zBD1rHDkTCtgnvi51x6RbBFBAi85xcAF    
+Ethereum: 0xfd45fb2d8017059b29e933d4b5e81028e58c5a31    
+DOGE: DDuyh2CbSwJnge8xyq7i5nDWYBa5VkvBG8   
 
+Thanks.
 
 (c) 2017 Marcelo G. Nuñez. <marcelognunez@gmail.com>. GNU General Public License v2.0
 See license.txt at root directory
