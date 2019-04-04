@@ -168,8 +168,8 @@ Life in Argentine is very hard. I have not job now, if you
 send something, you are making the greatest work, your help is limitless.
 
 Paypal: marcelognunez@gmail.com   
-Bitcoin: 3GHDn7quU5avYh1qkvM4idA4a1Sckt8gQs    
-DOGE: 9sB4dM7nj1ss4wU4SU4AoCpVeXehk4FzpL
+Bitcoin: 3GHDn7quU5avYh1qkvM4idA4a1Sckt8gQs	
+DOGE: 9sB4dM7nj1ss4wU4SU4AoCpVeXehk4FzpL	
 Litecoin: 39fFh3oXhx7vjNrTH4xQyehYfk4eRSA9et
 
 Thanks.
